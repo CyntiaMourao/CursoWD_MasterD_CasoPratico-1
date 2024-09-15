@@ -1,0 +1,1896 @@
+/*------------------------------------*\
+  # RESET DA ESTILIZAÇÃO POR DEFEITO #
+\*------------------------------------*/
+
+/* Definindo o font-size de todo o documento para 10px */
+
+html {
+  font-size: 10px;
+}
+
+/* Eliminando a estilização (margin e padding) por defeito do browser e definição de um tipo de letra "padrão" para o documento */
+
+* {
+  margin: 0;
+  padding: 0;  
+  box-sizing: border-box;
+  font-family: "Nanum Gothic", sans-serif;
+  list-style: none;
+  text-decoration: none;  
+}
+
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO GERAL DO BODY #
+\*------------------------------------*/
+
+body {
+  min-height: 100%;
+  background-color: #445861;
+}
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO DO HEADER #
+\*------------------------------------*/
+
+/* --- MOBILE SIZE < 768px --- */
+
+@media(max-width: 767px) {
+
+  header { 
+    position: fixed;
+     top: 2.5rem;
+     left: 0;
+     right: 0;
+    background-color: #0f2833;
+    height: 6rem;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .sub-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2.5rem;
+    width: 100%;
+    background-color: #445861;
+  }
+
+  .navbar-medium,  
+  .navbar-large {
+    display: none;
+  }  
+
+  .navbar-small {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 6rem;
+  }
+
+  a.s-toggle, 
+  .s-search-icon {
+    color: rgb(218, 218, 218);
+    font-size: 2rem;
+  }
+
+  .s-logo {
+    font-size: 6rem;
+    text-shadow: 2px 2px 4px white;
+    font-family: "Cinzel";
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+  }
+
+  /* Estilizando o menu "s-menu-list" ao passar o rato sobre o "toggle" */
+
+  .s-menu {
+    position: relative; /* Necessário para posicionar o dropdown */
+    color: rgb(218, 218, 218);  
+  }
+
+  .s-menu:hover {
+    background-color: rgba(165, 216, 237, 0.3);
+  }
+
+  .s-menu-list {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    left: 0;
+    padding: 1rem;
+    flex-direction: column;    
+    background-color: rgb(15, 40, 51, 0.95);
+    width: 14rem;
+  }
+
+  .s-menu-item.submenu i {
+    rotate: 270deg;
+  }
+
+  .s-toggle-menu:hover .s-menu-list {
+    display: flex; /* Exibe o dropdown ao passar o rato sobre o s-menu */
+  }
+
+  .s-menu-list li {
+    padding: 1rem;
+    border-top: 0.1rem solid rgb(186, 230, 233, 0.3);
+  }
+
+  .s-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.5rem;
+  }
+
+
+  /* Estilizando o menu "s-submenu-list" ao passar o rato sobre o item "Discografia" */
+
+  .s-submenu-list {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    left: 12rem;
+    top: 10rem;
+    padding: 1rem;
+    flex-direction: column;    
+    background-color: rgba(17, 73, 97, 0.95);
+  }
+
+  #submenu:hover .s-submenu-list {
+    display: flex; /* Exibe o dropdown ao passar o rato sobre o s-menu */
+  }
+
+  .s-submenu-list .s-submenu-item a {
+    font-size: 1.2rem;
+  }
+
+  /* Estilizando a barra de pesquisa ao clicar sobre a lupa */
+
+  /* Estilo básico para a navegação */
+  .s-navbar-search {
+    position: relative;
+    min-width: 5rem;
+  }
+
+  /* Esconder o checkbox */
+  #s-toggle-dropdown {
+    display: none;
+    position: absolute;
+  }
+
+  /* Esconder a barra de pesquisa inicialmente */
+  .s-search-bar {
+    display: none;  
+    position: absolute;
+    top: 100%;
+    right: 2rem;
+    padding: 0;
+    margin-top: 1.5rem;
+    margin-right: 3rem;
+    z-index: 1;
+    width: 100%;
+  }
+
+  /* Mostrar a barra de pesquisa quando o checkbox estiver marcado */
+  #s-toggle-dropdown:checked + .s-search-label + .s-search-bar {
+    display: block;
+  }
+}
+
+/* --- TABLET SIZE (entre 768px e 992px) --- */
+
+@media(min-width: 768px) and (max-width: 992px) {
+
+  header { 
+    position: fixed;
+     top: 2.5rem;
+     left: 0;
+     right: 0;
+    height: 6rem;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .sub-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15rem;
+    width: 100%;
+    background-color: #445861;
+  }
+
+  .navbar-small,  
+  .navbar-large {
+    display: none;
+  }
+   
+  .m-search-icon {
+    color: rgb(218, 218, 218);
+    font-size: 2rem;
+  }
+
+  .m-logo {
+    font-size: 7rem;
+    text-shadow: 2px 2px 4px white;
+    font-family: "Cinzel", serif;
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+  }
+  
+  .navbar-medium {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .logo-search-bar nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+  }
+
+  .logo-search-bar nav .empty,
+  .logo-search-bar nav .m-navbar-search {
+    flex-basis: 3.3rem;
+  }
+
+  ::placeholder {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1rem;
+  }
+
+  .m-menu nav {    
+    background-color: #0f2833;
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .m-menu nav .m-menu-list {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;    
+    width: 100%;
+  }
+  
+  .m-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 1rem;
+  }
+
+  .m-submenu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.5rem;
+  }
+
+  .m-submenu-list li {
+    padding: 1rem;
+    border-top: 0.1rem solid rgb(186, 230, 233, 0.3);
+  }
+
+  /* Estilizando o menu "m-menu-list" ao passar o rato sobre "Discografia" */
+
+  .m-menu-list #m-menu-dropdown {
+    position: relative; /* Necessário para posicionar o dropdown */     
+  }
+
+  .m-menu-item:hover {
+    background-color: rgba(165, 216, 237, 0.3);
+    border-radius: 5%;
+  }
+
+  .m-submenu-list {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    left: 0;
+    top: 3rem;
+    padding: 2rem 0 0.3rem;
+    flex-direction: column;    
+    background-color: rgb(15, 40, 51, 0.95);
+    width: 14rem;
+  }
+
+  #m-menu-dropdown:hover .m-submenu-list {
+    display: flex; /* Exibe o dropdown ao passar o rato sobre o m-menu */
+  }
+
+  .s-menu-list li {
+    padding: 1rem;
+    border-top: 0.1rem solid rgb(186, 230, 233, 0.3);
+  }
+
+  .s-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.5rem;
+  } 
+
+  /* Estilizando a barra de pesquisa ao clicar sobre a lupa */
+
+  /* Estilo básico para a navegação */
+  .m-navbar-search {
+    position: relative;
+    min-width: 5rem;
+  }
+
+  /* Esconder o checkbox */
+  #m-toggle-dropdown {
+    display: none;
+    position: absolute;
+  }
+
+  /* Esconder a barra de pesquisa inicialmente */
+  .m-search-bar {
+    display: none;  
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    padding: 0;
+    z-index: 1;
+  }
+
+  /* Mostrar a barra de pesquisa quando o checkbox estiver marcado */
+  #m-toggle-dropdown:checked + .m-search-label + .m-search-bar {
+    display: block;
+  }
+}
+
+/* --- LAPTOP/DESKTOP SIZE (entre 992px e 1200px) --- */
+
+@media(min-width: 992px) and (max-width: 1200px) {
+
+  header { 
+    position: fixed;
+     top: 4rem;
+     left: 0;
+     right: 0;
+    height: 6rem;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .sub-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15rem;
+    width: 100%;
+    background-color: #445861;
+  }
+
+  .navbar-small,  
+  .navbar-medium,
+  .l-search-bar {
+    display: none;
+  }
+
+  .navbar-large {    
+    background-color: #0f2833;
+    width: 100%;
+    height: 5rem;
+  }
+   
+  .l-search-icon {
+    color: rgb(218, 218, 218);
+    font-size: 2rem;
+  }
+
+  .l-logo {
+    font-size: 10rem;
+    text-shadow: 2px 2px 4px white;
+    font-family: "Cinzel", serif;
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+  }
+  
+  .navbar-large {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+
+  .l-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 1rem;
+  }
+
+  .l-submenu-list li {
+    width: 100%;
+    padding: 1rem;
+    border-top: 0.1rem solid rgb(186, 230, 233, 0.3);
+  }
+
+  #l-menu-dropdown > ul > li > a {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  nav ul li {
+    flex: 1 1 13rem;
+  }
+  
+  #l-menu-dropdown {
+    flex: 1 0 16rem;
+  }
+
+  /* Estilizando o menu "l-menu-list" ao passar o rato sobre "Discografia" */
+
+  .l-menu-list #l-menu-dropdown {
+    position: relative; /* Necessário para posicionar o dropdown */     
+  }
+
+  .l-menu-item:hover {
+    background-color: rgba(165, 216, 237, 0.3);
+    border-radius: 5%;
+  }
+
+  .l-submenu-list {
+    display: none; /* Esconde o dropdown por padrão */
+    position: absolute;
+    left: 1.5rem;
+    top: 4rem;
+    padding: 2rem 0 0.3rem;
+    flex-direction: column;    
+    background-color: rgb(15, 40, 51, 0.95);
+  }
+
+  #l-menu-dropdown:hover .l-submenu-list {
+    display: flex; /* Exibe o dropdown ao passar o rato sobre o l-menu */
+  }
+
+  .l-menu-list li {
+    padding: 1rem;
+  }
+
+  .l-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.8rem;
+  } 
+
+  /* Estilizando a barra de pesquisa ao clicar sobre a lupa */
+
+  /* Estilo básico para a navegação */
+  .l-navbar-search {
+    position: relative;
+    min-width: 5rem;
+  }
+
+  /* Esconder o checkbox */
+  #l-toggle-dropdown {
+    display: none;
+    position: absolute;
+  }
+
+  /* Esconder a barra de pesquisa inicialmente */
+  .l-search-bar {
+    display: none;  
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    padding: 0;
+    margin-top: 1.2rem;
+    z-index: 1;
+  }
+
+  /* Mostrar a barra de pesquisa quando o checkbox estiver marcado */
+  #l-toggle-dropdown:checked + .l-search-label + .l-search-bar {
+    display: block;
+  }
+
+}
+
+/* --- LAPTOP/DESKTOP SIZE > 1200px --- */
+
+@media(min-width: 1200px) {
+
+  header { 
+    position: fixed;
+     top: 4rem;
+     left: 0;
+     right: 0;
+    height: 6rem;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .sub-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 15rem;
+    width: 100%;
+    background-color: #445861;
+  }
+
+  .navbar-small,  
+  .navbar-medium {
+    display: none;
+  }
+   
+  .l-search-icon {
+    color: rgb(218, 218, 218);
+    font-size: 2rem;
+    margin-right: 3rem;
+  }
+
+  .l-logo {
+    font-size: 10rem;
+    text-shadow: 2px 2px 4px white;
+    font-family: "Cinzel", serif;
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    margin: 0 2rem 0 2.5rem;
+  }
+  
+  .navbar-large {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 3rem;   
+    background-color: #0f2833;
+    height: 5rem;
+    width: 100%;
+  }
+
+  .navbar-large #nav-left {
+    flex: 1 1 15rem;
+    text-align: left;
+    margin-left: 3rem;
+  }
+
+  .navbar-large #nav-right {
+    flex: 1 1 10rem;
+    text-align: center;
+  }
+
+  .l-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.8rem;
+    font-weight: 400;
+    padding: 1rem;
+  }
+
+  .l-submenu-list li {
+    width: 100%;
+    padding: 1rem;
+    border-top: 0.1rem solid rgb(186, 230, 233, 0.3);    
+    max-height: 4.5rem;
+  }
+
+  #l-menu-dropdown > ul > li > a {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  nav ul li {
+    flex: 1 0 13rem;
+  }
+  
+  #l-menu-dropdown {
+    flex: 1 0 16rem;
+  }
+
+  /* Estilizando o menu "l-menu-list" ao passar o rato sobre "Discografia" */
+
+  #l-menu-dropdown {
+    position: relative; /* Necessário para posicionar o dropdown */ 
+  }
+
+  .l-menu-item:hover {
+    background-color: rgba(165, 216, 237, 0.3);
+    border-radius: 5%;
+  }
+
+  .l-submenu-list {
+    display: none; /* Esconde o dropdown por padrão */
+    padding: 2rem 0 0.1rem;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;  
+    left: 0;
+    background-color: rgb(15, 40, 51, 0.95);
+  }
+
+  #l-menu-dropdown:hover .l-submenu-list {
+    display: flex; /* Exibe o dropdown ao passar o rato sobre o l-menu */
+  }
+
+  .l-menu-list li {
+    padding: 1rem;
+  }
+
+  .l-menu-list li a {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.8rem;
+  } 
+
+  /* Estilizando a barra de pesquisa ao clicar sobre a lupa */
+
+  /* Estilo básico para a navegação */
+  .l-navbar-search {
+    position: relative;
+    min-width: 5rem;
+  }
+
+  /* Esconder o checkbox */
+  #l-toggle-dropdown {
+    display: none;
+    position: absolute;
+  }
+
+  /* Esconder a barra de pesquisa inicialmente */
+  .l-search-bar {
+    display: none;  
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    padding: 0;
+    margin-top: 1.2rem;
+    z-index: 1;
+  }
+
+  /* Mostrar a barra de pesquisa quando o checkbox estiver marcado */
+  #l-toggle-dropdown:checked + .l-search-label + .l-search-bar {
+    display: block;
+  }
+}
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO GERAL DAS SECÇÕES #
+\*------------------------------------*/
+
+.section {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 4rem;
+  text-align: justify;
+  color: rgb(218, 218, 218);
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 2.5rem;
+}
+
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO DA SECÇÃO "BIOGRAFIA" #
+\*------------------------------------*/
+
+/* --- MOBILE SIZE < 768px --- */
+
+@media(max-width: 768px) {
+
+  .section-bio {
+    margin-top: 10rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    padding: 2.5rem 0rem;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 992px) {
+
+  .section-bio {
+    margin-top: 20rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    padding: 2.5rem 0rem;
+  }
+}
+
+@media(min-width: 992px) {
+
+  .section-bio {
+    margin-top: 12rem;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    text-align: center;
+    padding: 2.5rem 0rem;
+  }
+}
+
+
+/*------------------------------------*\
+# ESTILIZAÇÃO DA SECÇÃO "DISCOGRAFIA" #
+\*------------------------------------*/
+
+strong {
+  color: #0f2833;
+}
+
+@media(max-width: 576px) {
+
+  .section-disco {
+    background-color: rgb(139, 181, 199, 0.75);
+  }
+
+  h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2.2rem;
+    text-align: center;
+    color: #2a363b;
+    padding: 2rem 0rem 3rem;
+  }
+
+  .section-disco {
+    width: 100%;
+    padding: 0.5rem 5rem 4rem;
+  }
+
+  .disco-covers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disco-cover-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 1rem 2rem;
+    min-width: 15rem;
+  }
+
+  .img-cover a img {
+    width: 15rem;
+    height: auto;
+  }
+
+  .img-legend {
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: rgb(230, 230, 230);
+  }
+}
+
+@media(min-width: 576px) and (max-width: 768px) {
+
+  .section-disco {
+    background-color: rgb(139, 181, 199, 0.75);
+  }
+
+  h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #2a363b;
+    padding: 3rem 0rem 4.5rem;
+  }
+
+  .section-disco {
+    width: 100%;
+    padding: 0.5rem 5rem 4rem;
+  }
+
+  .disco-covers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disco-cover-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 1rem 2rem;
+    min-width: 15rem;
+  }
+
+  .img-cover a img {
+    width: 15rem;
+    height: auto;
+  }
+
+  .img-legend {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: rgb(230, 230, 230);
+  }
+}
+
+@media(min-width: 768px) and (max-width: 992px) {
+
+  .section-disco {
+    background-color: rgb(139, 181, 199, 0.75);
+  }
+
+  h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #2a363b;
+    padding: 3rem 0rem 4.5rem;
+  }
+
+  .section-disco {
+    width: 100%;
+    padding: 0.5rem 5rem 4rem;
+  }
+
+  .disco-covers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disco-cover-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 1rem 2rem;
+    min-width: 15rem;
+  }
+
+  .img-cover a img {
+    width: 15rem;
+    height: auto;
+  }
+
+  .img-legend {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: rgb(230, 230, 230);
+  }
+}
+
+@media(min-width: 992px) and (max-width: 1400px) {
+
+  .section-disco {
+    background-color: rgb(139, 181, 199, 0.75);
+  }
+
+  h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #2a363b;
+    padding: 3rem 0rem 4.5rem;
+  }
+
+  .section-disco {
+    width: 100%;
+    padding: 0.5rem 15rem 4rem;
+  }
+
+  .disco-covers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disco-cover-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 1rem 2rem;
+    min-width: 15rem;
+  }
+
+  .img-cover a img {
+    width: 16rem;
+    height: auto;
+  }
+
+  .img-legend {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: rgb(230, 230, 230);
+  }
+}
+
+@media(min-width: 1400px) {
+
+  .section-disco {
+    background-color: rgb(139, 181, 199, 0.75);
+  }
+
+  h2 {
+    font-family: "Cinzel", serif;
+    font-size: 2.8rem;
+    text-align: center;
+    color: #2a363b;
+    padding: 3rem 0rem 4.5rem;
+  }
+
+  .section-disco {
+    width: 100%;
+    padding: 0.5rem 5rem 4rem;
+  }
+
+  .disco-covers {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .disco-cover-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 1rem 2rem;
+    min-width: 15rem;
+  }
+
+  .img-cover a img {
+    width: 16rem;
+    height: auto;
+  }
+
+  .img-legend {
+    font-weight: 400;
+    font-size: 1.4rem;
+    color: rgb(230, 230, 230);
+  }
+}
+
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO DA SECÇÃO "AGENDA" #
+\*------------------------------------*/
+
+@media(max-width: 576px) {
+
+  .agenda h2 {
+    color: rgb(218, 218, 218);
+    padding: 4rem 0rem 3rem;
+  }
+
+  .entry-agenda {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 38rem;
+  }
+
+  .agenda-card {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 4rem;
+    background-color: rgba(165, 216, 237, 0.5);
+    border: 0.05rem solid #A6D8ED;
+    height: 10rem;
+    position: relative;
+    z-index: -1;
+  }
+
+  .agenda-card > .data, .title {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .agenda-card > .title {
+    overflow: hidden;
+  }
+
+  .agenda-card > .data {
+    flex-basis: 7rem;
+  }
+
+  .agenda-card > .title {
+    flex-basis: 7rem;
+    font-size: 1.4rem;
+    font-weight: 400;
+    height: 4rem;
+    padding: 0 1rem 1.5rem;
+  }
+
+  .agenda-card > .tickets {
+    height: 70%;
+    flex-basis: 6.5rem;
+    align-self: center;
+    border-style: solid;
+    border-color: rgba(156, 204, 223, 0.5);
+    background-color: #56727e;
+    color: rgb(218, 218, 218);
+    padding: 0.4rem 1.5rem;
+    position: relative;
+    bottom: 0.3rem;
+  }
+}
+
+@media(min-width: 576px) and (max-width: 768px) {
+
+  .agenda h2 {
+    color: rgb(218, 218, 218);
+    padding: 4rem 0rem 3rem;
+  }
+
+  .entry-agenda {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    height: 18rem;
+  }
+
+  .agenda-card {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: rgba(165, 216, 237, 0.5);
+    border: 0.05rem solid #A6D8ED;
+    min-height: 6.5rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .agenda-card > .data, .title {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .agenda-card > .data {
+    flex-basis: 13rem;
+    text-align: left;
+  }
+
+  .agenda-card > .title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    flex-basis: 30rem;
+    padding: 0 1rem;
+  }
+
+  .agenda-card > .tickets {
+    height: 70%;
+    flex-basis: 6.5rem;
+    align-self: center;
+    border-style: solid;
+    border-color: rgba(156, 204, 223, 0.5);
+    background-color: #56727e;
+    color: rgb(218, 218, 218);
+    padding: 0.4rem 1.5rem;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 992px) {
+
+  .agenda h2 {
+    color: rgb(218, 218, 218);
+    padding: 4rem 0rem 3rem;
+  }
+
+  .entry-agenda {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 23rem;
+  }
+
+  .agenda-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2.5rem;
+    background-color: rgba(165, 216, 237, 0.5);
+    border: 0.05rem solid #A6D8ED;
+    height: 6.5rem;
+  }
+
+  .agenda-card > .data, .title {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+
+  .agenda-card > .data {
+    flex-basis: 15rem;
+  }
+
+  .agenda-card > .title {
+    font-size: 1.4rem;
+    font-weight: 400;
+    flex-basis: 30rem;
+  }
+
+  .agenda-card > .tickets {
+    height: 75%;
+    flex-basis: 75px;
+    align-self: center;
+    border-style: solid;
+    border-color: rgba(156, 204, 223, 0.5);
+    background-color: #56727e;
+    color: rgb(218, 218, 218);
+    padding: 0.4rem 2rem;
+  }
+}
+
+@media(min-width: 992px) {
+
+  .agenda h2 {
+    color: rgb(218, 218, 218);
+    padding: 4rem 0rem 3rem;
+  }
+
+  .entry-agenda {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 23rem;
+  }
+
+  .agenda-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2.5rem;
+    background-color: rgba(165, 216, 237, 0.5);
+    border: 0.05rem solid #A6D8ED;
+    height: 6.5rem;
+  }
+
+  .agenda-card > .data, .title {
+    font-family: "Nanum Gothic", sans-serif;
+    color: rgb(218, 218, 218);
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .agenda-card > .data {
+    flex-basis: 16rem;
+  }
+
+  .agenda-card > .title {
+    font-size: 1.6rem;
+    font-weight: 400;
+    flex-basis: 50rem;
+  }
+
+  .agenda-card > .tickets {
+    height: 75%;
+    flex-basis: 75px;
+    align-self: center;
+    border-style: solid;
+    border-color: rgba(156, 204, 223, 0.5);
+    background-color: #56727e;
+    color: rgb(218, 218, 218);
+    padding: 0.4rem 2rem;    
+    font-size: 1.2rem;
+  }
+}
+
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO DA SECÇÃO "CONTACTOS" #
+\*------------------------------------*/
+
+@media(max-width: 576px) {
+
+  .section-contacts {
+    background-color: rgba(138, 181, 198, 0.3);
+    width: 100%;
+    padding: 2rem 2rem;
+  }
+
+  .container-row.contacts {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;    
+    column-gap: 2rem;
+  }
+
+  .container-column {
+    margin: 0 4rem;
+    text-align: center;
+  }
+
+  .container-column.direct-contacts {
+    margin: 0 4rem;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    color: rgb(218, 218, 218);  
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+    font-family: "Cinzel", serif;
+  }
+
+  .tel-card {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  .tel-title {
+    padding: 0rem;
+    margin: 0rem 0rem 0.8rem;
+    font-weight: 600;
+  }
+
+  .email-title {
+    padding: 0px;
+    margin: 1.5rem 0rem 0.5rem;
+    font-weight: 600;
+  }
+
+  i {
+    margin-right: 0.8rem;
+  }
+
+  .tel-detail, .email-detail {
+    font-size: 1.4rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .tel-detail-txt {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+  }
+
+  input, textarea {  
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 3rem;
+    margin: 0.6rem 0rem;
+  }
+
+  textarea {
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 7.5rem;
+  }
+
+  ::placeholder {  
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.4rem;
+    opacity: 0.5;
+    padding: 0.5rem;
+  }
+
+  .check {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .check > input, .check > label {
+    margin: 0rem 0.3rem 0rem;
+  }
+
+  .check > input {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .check > label {
+    font-size: 1.1rem;
+    text-align: left;
+  }
+
+  button {
+    height: 3rem;
+    background-color: rgba(68, 87, 96, 0.5);
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 600;
+    border: #A6D8ED;
+  }
+}
+
+@media(min-width: 576px) and (max-width: 768px) {
+
+  .section-contacts {
+    background-color: rgba(138, 181, 198, 0.3);
+    width: 100%;
+    padding: 2rem 5rem;
+  }
+
+  .container-row.contacts {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;    
+    column-gap: 2rem;
+  }
+
+  .container-column {
+    margin: 0 4rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  h3 {
+    color: rgb(218, 218, 218);  
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .tel-card {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  .tel-title {
+    padding: 0rem;
+    margin: 0rem 0rem 0.8rem;
+    font-weight: 600;
+  }
+
+  .email-title {
+    padding: 0px;
+    margin: 1.5rem 0rem 0.5rem;
+    font-weight: 600;
+  }
+
+  i {
+    margin-right: 0.8rem;
+  }
+
+  .tel-detail, .email-detail {
+    font-size: 1.4rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .tel-detail-txt {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+  }
+
+  input, textarea {  
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.5px solid rgba(156, 204, 223, 0.5);
+    height: 30px;
+    margin: 6px 0px;
+  }
+
+  textarea {
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 7.5rem;
+  }
+
+  ::placeholder {  
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.4rem;
+    opacity: 0.5;
+    padding: 0.5rem;
+  }
+
+  .check {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .check > input, .check > label {
+    margin: 0rem 0.3rem 0rem;
+  }
+
+  .check > input {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .check > label {
+    font-size: 1.2rem;
+  }
+
+  button {
+    height: 3rem;
+    background-color: rgba(68, 87, 96, 0.5);
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 600;
+    border: #A6D8ED;
+  }
+}
+
+@media(min-width: 768px) and (max-width: 992px) {
+
+  .section-contacts {
+    background-color: rgba(138, 181, 198, 0.3);
+    width: 100%;
+    padding: 2rem 5rem;
+  }
+
+  .container-row.contacts {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;    
+    column-gap: 2rem;
+  }
+
+  .container-column {
+    margin: 0 4rem;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  h3 {
+    color: rgb(218, 218, 218);  
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .tel-card {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  .tel-title {
+    padding: 0rem;
+    margin: 0rem 0rem 0.8rem;
+    font-weight: 600;
+  }
+
+  .email-title {
+    padding: 0rem;
+    margin: 1.5rem 0rem 0.5rem;
+    font-weight: 600;
+  }
+
+  i {
+    margin-right: 0.8rem;
+  }
+
+  .tel-detail, .email-detail {
+    font-size: 1.4rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .tel-detail-txt {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+  }
+
+  input, textarea {  
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 3rem;
+    margin: 0.6rem 0rem;
+  }
+
+  textarea {
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 7.5rem;
+  }
+
+  ::placeholder {  
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.4rem;
+    opacity: 0.5;
+    padding: 0.5rem;
+  }
+
+  .check {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .check > input, .check > label {
+    margin: 0rem 0.3rem 0rem;
+  }
+
+  .check > input {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .check > label {
+    font-size: 1.2rem;
+  }
+
+  button {
+    height: 3rem;
+    background-color: rgba(68, 87, 96, 0.5);
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 600;
+    border: #A6D8ED;
+  }
+}
+
+@media(min-width: 992px) {
+
+  .section-contacts {
+    background-color: rgba(138, 181, 198, 0.3);
+    width: 100%;
+    padding: 2rem 5rem;
+  }
+
+  .container-row.contacts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin: auto;
+    padding: 2rem;    
+    column-gap: 2rem;
+  }
+
+  .container-column {
+    margin: 0 4rem;
+  }
+
+  h3 {
+    color: rgb(218, 218, 218);  
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .tel-card {  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+
+  .tel-title {
+    padding: 0rem;
+    margin: 0rem 0rem 0.8rem;
+    font-weight: 600;
+  }
+
+  .email-title {
+    padding: 0rem;
+    margin: 1.5rem 0rem 0.5rem;
+    font-weight: 600;
+  }
+
+  i {
+    margin-right: 0.8rem;
+  }
+
+  .tel-detail, .email-detail {
+    font-size: 1.4rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .tel-detail-txt {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  form {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+  }
+
+  input, textarea {  
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 3rem;
+    margin: 0.6rem 0rem;
+  }
+
+  textarea {
+    background-color: rgba(138, 181, 198, 0.3);
+    color: rgb(218, 218, 218);
+    border: 0.05rem solid rgba(156, 204, 223, 0.5);
+    height: 7.5rem;
+  }
+
+  ::placeholder {  
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.4rem;
+    opacity: 0.5;
+    padding: 0.5rem;
+  }
+
+  .check {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .check > input, .check > label {
+    margin: 0rem 0.3rem 0rem;
+  }
+
+  .check > input {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .check > label {
+    font-size: 1.2rem;
+  }
+
+  button {
+    height: 3rem;
+    background-color: rgba(68, 87, 96, 0.5);
+    color: rgb(218, 218, 218);
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 600;
+    border: #A6D8ED;
+  }
+}
+
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO DA SECÇÃO "FOOTER" #
+\*------------------------------------*/
+
+@media(max-width: 576px) {
+
+  .section-final {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f2833;
+    padding: 1.5rem 0rem;
+    width: 100%;
+  }
+
+  .politics a, .socialMedia a { 
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .politics, .socialMedia {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .politics {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 2rem 1rem 2rem;
+  }
+
+  .section-end {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    height: 2.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media(min-width: 576px) and (max-width: 768px) {
+
+  .section-final {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f2833;
+    padding: 1.5rem 0rem;
+    width: 100%;
+  }
+
+  .politics a, .socialMedia a { 
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.2rem;
+  }
+
+  .politics, .socialMedia {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .politics {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 0 2rem 1rem 2rem;
+  }
+
+  .section-end {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    height: 2.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media(min-width: 768px) {
+
+  .section-final {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #0f2833;
+    padding: 1.5rem 0rem;
+    width: 100%;
+  }
+
+  .politics a, .socialMedia a { 
+    color: rgb(218, 218, 218);
+    text-decoration: none;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 1.4rem;
+  }
+
+  .politics, .socialMedia {
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .politics {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 60%;
+    margin: 0 2rem 1rem 2rem;
+  }
+
+  .section-end {
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    height: 2.5rem;
+    line-height: 1.5rem;
+  }
+}
+
+
+/*------------------------------------*\
+  # ESTILIZAÇÃO DE EFEITOS #
+\*------------------------------------*/
+
+
+.nav-item a:hover {
+  color: rgb(193, 233, 250);
+  transition: background-color 1s;
+  cursor: pointer;
+}
+
+.nav-item a:active {
+  background-color: rgba(193, 233, 250, 0.233);
+}
+
+button:hover {
+  background-color: rgb(166, 216, 237, 0.5);
+  color: rgba(68, 87, 96);
+  transition: background-color 1s;
+  cursor: pointer;
+  
+}

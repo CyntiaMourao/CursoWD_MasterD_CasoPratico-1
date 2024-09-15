@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Cyntia Mourão">
+  <meta name="description" content="Caso prático: desenvolvimento de homepage de website com recurso a HTML e CSS">
+  <meta name="keywords" content="ABBA, band, music, pop, sweden">
+
+  <title>Caso Prático #1</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://kit.fontawesome.com/26c280db12.js" crossorigin="anonymous"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Dosis:wght@200..800&family=Nanum+Gothic&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="sub-header"></div>
+
+  <header> 
+
+    <div class="navbar-small">
+      <div class="s-toggle-menu"> 
+        <a class="s-toggle" href=""><i class="fa-solid fa-bars"></i></a>
+        <nav class="s-menu">
+          <ul class="s-menu-list">
+            <li><a href="" class="s-menu-item">Home</a></li>
+            <li><a href="" class="s-menu-item">Biografia</a></li>
+            <li id="submenu"><a href="" class="s-menu-item submenu">Discografia <i class="fa-solid fa-caret-down"></i></a>
+              <ul class="s-submenu-list">
+                <li class="s-submenu-item"><a href="https://en.wikipedia.org/wiki/Category:ABBA_compilation_albums" target="_blank">Compilações</a></li>
+                <li class="s-submenu-item"><a href="https://en.wikipedia.org/wiki/The_Albums" target="_blank">Álbuns</a></li>
+                <li class="s-submenu-item"><a href="https://abbaomnibus.com/discs/abba-discografia/" target="_blank">DVDs</a></li>
+                <li class="s-submenu-item"><a href="https://www.theguardian.com/music/2018/jun/29/all-abbas-uk-singles-ranked" target="_blank">Singles</a></li>
+              </ul>
+            </li>
+            <li><a href="" class="s-menu-item">Agenda</a></li>
+            <li><a href="" class="s-menu-item">Loja</a></li>
+            <li><a href="" class="s-menu-item">Contatos</a></li>
+          </ul>
+        </nav>
+      </div>
+      <a class="s-logo" href="">ABBA</a>
+      
+      <nav class="s-navbar-search">        
+        <input type="checkbox" id="s-toggle-dropdown">
+        <label for="s-toggle-dropdown" class="s-search-label"><i class="s-search-icon fa-solid fa-magnifying-glass"></i></label>
+        <div class="s-search-bar">
+          <input type="search" name="search" id="s-search" placeholder="Pesquisar">
+          <label for="s-search" class="s-search-label"></label>
+        </div>
+      </nav>
+    </div> 
+    
+    <div class="navbar-medium">
+      <div class="logo-search-bar">
+        <nav>
+          <a class="empty" href=""></a>
+          <a class="m-logo" href="">ABBA</a> 
+          <div class="m-navbar-search">        
+            <input type="checkbox" id="m-toggle-dropdown">
+            <label for="m-toggle-dropdown" class="m-search-label"><i class=" m-search-icon fa-solid fa-magnifying-glass"></i></label>
+            <div class="m-search-bar">
+              <input type="search" name="search" id="m-search" placeholder="Pesquisar">
+              <label for="m-search" class="m-search-label"></label>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <div class="m-menu">
+        <nav>
+            <ul class="m-menu-list">
+              <li><a href="" class="m-menu-item">Home</a></li>
+              <li><a href="" class="m-menu-item">Biografia</a></li>
+              <li id="m-menu-dropdown"><a href="" class="m-menu-item submenu">Discografia <i class="fa-solid fa-caret-down"></i></a>
+                <ul class="m-submenu-list">
+                  <li class="m-submenu-item"><a href="https://en.wikipedia.org/wiki/Category:ABBA_compilation_albums" target="_blank">Compilações</a></li>
+                  <li class="m-submenu-item"><a href="https://en.wikipedia.org/wiki/The_Albums" target="_blank">Álbuns</a></li>
+                  <li class="m-submenu-item"><a href="https://abbaomnibus.com/discs/abba-discografia/" target="_blank">DVDs</a></li>
+                  <li class="m-submenu-item"><a href="https://www.theguardian.com/music/2018/jun/29/all-abbas-uk-singles-ranked" target="_blank">Singles</a></li>
+                </ul>
+              </li>
+              <li><a href="" class="m-menu-item">Agenda</a></li>
+              <li><a href="" class="m-menu-item">Loja</a></li>
+              <li><a href="" class="m-menu-item">Contatos</a></li>
+            </ul>
+        </nav>
+      </div>      
+    </div>
+
+    <div class="navbar-large">
+      <nav id="nav-left">
+        <ul class="l-menu-list" >
+          <li><a class="l-menu-item" href="">Home</a></li>
+          <li><a class="l-menu-item" href="">Biografia</a></li>
+          <li id="l-menu-dropdown"><a class="l-menu-item submenu" href="">Discografia <i class="fa-solid fa-caret-down"></i></a>
+            <ul class="l-submenu-list">
+              <li class="l-submenu-item"><a href="https://en.wikipedia.org/wiki/The_Albums" target="_blank">Álbuns</a></li>
+              <li class="l-submenu-item"><a href="https://en.wikipedia.org/wiki/Category:ABBA_compilation_albums" target="_blank">Compilações</a></li>
+              <li class="l-submenu-item"><a href="https://abbaomnibus.com/discs/abba-discografia/" target="_blank">DVDs</a></li>
+              <li class="l-submenu-item"><a href="https://www.theguardian.com/music/2018/jun/29/all-abbas-uk-singles-ranked" target="_blank">Singles</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <a class="l-logo" href="">ABBA</a>
+      <nav id="nav-right">
+        <ul class="l-menu-list" >
+          <li><a class="l-menu-item" href="">Agenda</a></li>
+          <li><a class="l-menu-item" href="">Loja</a></li>
+          <li><a class="l-menu-item" href="">Contatos</a></li>
+        </ul>
+      </nav>
+      <nav class="l-navbar-search">        
+        <input type="checkbox" id="l-toggle-dropdown">
+        <label for="l-toggle-dropdown" class="l-search-label"><i class=" l-search-icon fa-solid fa-magnifying-glass"></i></label>
+        <div class="l-search-bar">
+          <input type="search" name="search" id="l-search" placeholder="Pesquisar">
+          <label for="l-search" class="l-search-label"></label>
+        </div>
+      </nav>
+    </div>
+    
+
+  </header> 
+  
+
+
+  <main>
+
+    <section class="section section-bio">
+
+      <div class="container bio">
+
+        <h1>Um legado que transformou para sempre a história da música pop</h1>
+
+        <p><i>Agnetha Faltskog</i>, <i>Bjorn Ulvaeus</i>, <i>Benny Andersson</i> e <i>Anni-Frid Lyngstad</i> formaram um dos quartetos mais populares da música pop dos anos 70. Os ABBA apresentaram-se ao público pela primeira vez em 1973, ficando em terceiro lugar com o tema "Ring, Ring". Em 1974 o quarteto mudou o nome para <strong>ABBA</strong>, um acrónimo dos seus nomes próprios, e voltou a entrar no Festival Eurovisão da Canção nesse ano, vencendo a competição com o tema "Waterloo". O seu reinado expirou em 1983, altura em que o grupo se separou.</p>
+
+      </div>
+
+    </section>
+
+
+    <section class="section section-disco">
+
+      <div class="container container-row disco">
+
+        <h2>Os melhores álbuns</h2>
+
+        <div class="disco-covers">
+
+          <div class="disco-cover-card">
+            <div class="img-cover">              
+              <a href="https://abba.lnk.to/abbaarrival" target="_blank"><img src="images/4_ABBA_Arrival.jpg" alt="ABBA-Arrival" title="ABBA Álbum Arrival" width="175" height="175"></a>
+            </div>
+            <p class="img-legend"><strong>#1</strong> Arrival | <span>1976</span></p>
+          </div>
+
+          <div class="disco-cover-card">
+            <div class="img-cover">              
+              <a href="https://abba.lnk.to/thevisitors" target="_blank"><img src="images/7_ABBA-The_Visitors.jpg" alt="ABBA-The_Visitors" title="ABBA Álbum The Visitors" width="175" height="175"></a>
+            </div>
+            <p class="img-legend"><strong>#2</strong> The Visitors | <span>1981</span></p>
+          </div>
+
+          <div class="disco-cover-card">
+            <div class="img-cover">              
+              <a href="https://abba.lnk.to/supertrouper" target="_blank"><img src="images/6_ABBA-Super_Trouper.jpg" alt="Super-Trouper" title="ABBA Álbum Super Trouper" width="175" height="175"></a>
+            </div>
+            <p class="img-legend"><strong>#3</strong> Super Trouper | <span>1980</span></p>
+          </div>
+
+          <div class="disco-cover-card">
+            <div class="img-cover">              
+              <a href="https://abba.lnk.to/abba" target="_blank"><img src="images/3_ABBA_(1975).jpg" alt="ABBA" title="ABBA Álbum" width="175" height="175"></a>
+            </div>
+            <p class="img-legend"><strong>#4</strong> ABBA | <span>1975</span></p>
+          </div>
+
+          <div class="disco-cover-card">
+            <div class="img-cover">              
+              <a href="https://abba.lnk.to/abba" target="_blank"><img src="images/2_ABBA-Waterloo.jpg" alt="ABBA" title="Waterloo" width="175" height="175"></a>
+            </div>
+            <p class="img-legend"><strong>#5</strong> Waterloo | <span>1974</span></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <section class="section section-agenda">
+
+      <div class="container container-column agenda">
+
+        <h2>Agenda</h2>
+
+        <div class="entry-agenda">
+
+          <div class="agenda-card">
+            <p class="data">9 Agosto 2024</p>
+            <p class="title">Lisboa | Grande Auditório do Centro Cultural de Belém</p>
+            <button class="tickets">BILHETES</button>
+          </div>
+
+          <div class="agenda-card">
+              <p class="data">23 Agosto 2024</p>
+              <p class="title">Lisboa | Grande Auditório da Gulbenkian</p>
+              <button class="tickets">BILHETES</button>
+          </div>
+
+          <div class="agenda-card">
+              <p class="data">6 Setembro 2024</p>
+              <p class="title">Porto | Altice Arena</p>
+              <button class="tickets">BILHETES</button>
+          </div>
+
+        </div>  
+        
+      </div>
+
+    </section>
+
+
+    <section class="section section-contacts">
+
+      <div class="container container-row contacts">
+
+        <div class="container-column direct-contacts">          
+
+          <h3>--- Contatos Gerais ---</h3>
+
+          <div class="tel-card">
+            <p class="tel-title"><i class="fa-solid fa-phone"></i>Telefone</p>
+            <p class="tel-detail">+351 918 523 785</p>
+            <p class="tel-detail-txt">(Chamada para a rede móvel nacional)</p>
+            <p class="tel-detail">+351 218 985 047</p>
+            <p class="tel-detail-txt">(Chamada para a rede fixa nacional)</p>
+          </div>
+
+          <div class="email-card">
+              <p class="email-title"><i class="fa-solid fa-envelope"></i>E-mail</p>
+              <p class="email-detail">abba.band@gmail.com</p>
+          </div>
+
+        </div>
+
+        <div class="container-column form-contacts">
+
+          <h3>--- Contato Direto ---</h3>
+
+          <div class="form-card">
+
+            <form>
+              <input type="text" class="form-text" placeholder="Nome completo">
+              <input type="tel" class="form-text" placeholder="Telefone">
+              <input type="email" class="form-text" placeholder="Email">
+              <textarea rows="5" name="message" id="message" class="form-text" placeholder="Mensagem"></textarea>
+              <div class="check">
+                <input type="checkbox" id="check" name="check">
+                <label for="check">Aceito a recolha de dados para o envio de propostas e ações de marketing.</label>
+              </div>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <footer>
+
+    <div class="section section-final">
+
+      <div class="politics">
+        <a href="">Termos e condições</a>
+        <a href="">Cookies</a>
+        <a href="">Política de privacidade</a>
+      </div>
+
+      <div class="socialMedia">
+        <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+        <a href=""><i class="fa-brands fa-instagram"></i></a>
+        <a href=""><i class="fa-brands fa-youtube"></i></a>
+        <a href=""><i class="fa-brands fa-spotify"></i></a>
+        <a href=""><i class="fa-brands fa-itunes-note"></i></a>
+        <a href=""><i class="fa-brands fa-apple"></i></a>
+      </div>
+
+    </div>
+
+    <div class="section section-end">
+        <p>POWERED BY <br> <strong>Cyntia Mourão | 2024</strong></p>
+    </div>
+
+  </footer>
+
+  
+</body>
+
+</html>
